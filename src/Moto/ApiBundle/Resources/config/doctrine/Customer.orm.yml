@@ -1,0 +1,60 @@
+Moto\ApiBundle\Entity\Customer:
+    type: entity
+    table: customer
+    fields:
+        cusId:
+            id: true
+            type: integer
+            unsigned: false
+            nullable: false
+            column: cus_id
+            generator:
+                strategy: IDENTITY
+        cusName:
+            type: string
+            length: 150
+            fixed: false
+            nullable: false
+            column: cus_name
+        cusEmail:
+            type: string
+            length: 300
+            fixed: false
+            nullable: false
+            column: cus_email
+        cusPhone:
+            type: string
+            length: 15
+            fixed: false
+            nullable: true
+            column: cus_phone
+        cusPassword:
+            type: string
+            length: 45
+            fixed: false
+            nullable: false
+            column: cus_password
+        cusCreatedAt:
+            type: datetime
+            nullable: false
+            column: cus_created_at
+        cusUpdatedAt:
+            type: datetime
+            nullable: false
+            column: cus_updated_at
+        areId:
+            type: integer
+            unsigned: false
+            nullable: true
+            column: are_id
+    manyToOne:
+        cua:
+            targetEntity: CustomerAddress
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                cua_id:
+                    referencedColumnName: cua_id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

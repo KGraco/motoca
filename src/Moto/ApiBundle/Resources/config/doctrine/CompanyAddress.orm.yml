@@ -1,0 +1,63 @@
+Moto\ApiBundle\Entity\CompanyAddress:
+    type: entity
+    table: company_address
+    fields:
+        coaId:
+            id: true
+            type: integer
+            unsigned: false
+            nullable: false
+            column: coa_id
+            generator:
+                strategy: IDENTITY
+        coaCountry:
+            type: string
+            length: 200
+            fixed: false
+            nullable: false
+            column: coa_country
+        coaStreet:
+            type: string
+            length: 200
+            fixed: false
+            nullable: false
+            column: coa_street
+        coaNeighborhood:
+            type: string
+            length: 200
+            fixed: false
+            nullable: false
+            column: coa_neighborhood
+        coaNumber:
+            type: boolean
+            nullable: false
+            column: coa_number
+        coaZipcode:
+            type: boolean
+            nullable: false
+            column: coa_zipcode
+        coaCity:
+            type: string
+            length: 200
+            fixed: false
+            nullable: false
+            column: coa_city
+        coaLat:
+            type: string
+            length: 100
+            fixed: false
+            nullable: false
+            column: coa_lat
+        coaLng:
+            type: string
+            length: 100
+            fixed: false
+            nullable: false
+            column: coa_lng
+        coaGeohash:
+            type: string
+            length: 150
+            fixed: false
+            nullable: false
+            column: coa_geohash
+    lifecycleCallbacks: {  }

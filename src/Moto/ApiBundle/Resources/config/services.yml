@@ -1,0 +1,7 @@
+parameters:
+#    moto_api.example.class: Moto\ApiBundle\Example
+
+services:
+#    moto_api.example:
+#        class: %moto_api.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

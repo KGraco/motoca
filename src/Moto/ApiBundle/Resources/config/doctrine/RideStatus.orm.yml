@@ -1,0 +1,25 @@
+Moto\ApiBundle\Entity\RideStatus:
+    type: entity
+    table: ride_status
+    fields:
+        risId:
+            id: true
+            type: integer
+            unsigned: false
+            nullable: false
+            column: ris_id
+            generator:
+                strategy: IDENTITY
+        risName:
+            type: string
+            length: 45
+            fixed: false
+            nullable: false
+            column: ris_name
+        risDescription:
+            type: string
+            length: 100
+            fixed: false
+            nullable: false
+            column: ris_description
+    lifecycleCallbacks: {  }

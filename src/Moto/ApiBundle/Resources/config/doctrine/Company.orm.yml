@@ -1,0 +1,53 @@
+Moto\ApiBundle\Entity\Company:
+    type: entity
+    table: company
+    fields:
+        comId:
+            id: true
+            type: integer
+            unsigned: false
+            nullable: false
+            column: com_id
+            generator:
+                strategy: IDENTITY
+        comName:
+            type: string
+            length: 45
+            fixed: false
+            nullable: false
+            column: com_name
+        comCnpj:
+            type: string
+            length: 18
+            fixed: true
+            nullable: false
+            column: com_cnpj
+        comPhone:
+            type: string
+            length: 14
+            fixed: true
+            nullable: false
+            column: com_phone
+        comDateCreated:
+            type: datetime
+            nullable: false
+            column: com_date_created
+        comDateUpdated:
+            type: datetime
+            nullable: false
+            column: com_date_updated
+        comIsActive:
+            type: boolean
+            nullable: false
+            column: com_is_active
+    manyToOne:
+        coa:
+            targetEntity: CompanyAddress
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                coa_id:
+                    referencedColumnName: coa_id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

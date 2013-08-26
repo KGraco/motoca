@@ -1,0 +1,59 @@
+Moto\ApiBundle\Entity\Moto:
+    type: entity
+    table: moto
+    fields:
+        motId:
+            id: true
+            type: integer
+            unsigned: false
+            nullable: false
+            column: mot_id
+            generator:
+                strategy: IDENTITY
+        motCpf:
+            type: string
+            length: 14
+            fixed: true
+            nullable: false
+            column: mot_cpf
+        motPlaque:
+            type: string
+            length: 8
+            fixed: true
+            nullable: false
+            column: mot_plaque
+        motMark:
+            type: string
+            length: 100
+            fixed: false
+            nullable: false
+            column: mot_mark
+        motOwner:
+            type: string
+            length: 200
+            fixed: false
+            nullable: false
+            column: mot_owner
+        motDateCreated:
+            type: datetime
+            nullable: false
+            column: mot_date_created
+        motDateUpdated:
+            type: datetime
+            nullable: false
+            column: mot_date_updated
+        motIsActive:
+            type: boolean
+            nullable: false
+            column: mot_is_active
+    manyToOne:
+        com:
+            targetEntity: Company
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                com_id:
+                    referencedColumnName: com_id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

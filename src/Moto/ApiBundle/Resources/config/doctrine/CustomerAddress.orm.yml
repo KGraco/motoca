@@ -1,0 +1,63 @@
+Moto\ApiBundle\Entity\CustomerAddress:
+    type: entity
+    table: customer_address
+    fields:
+        cuaId:
+            id: true
+            type: integer
+            unsigned: false
+            nullable: false
+            column: cua_id
+            generator:
+                strategy: IDENTITY
+        cuaCountry:
+            type: string
+            length: 200
+            fixed: false
+            nullable: false
+            column: cua_country
+        cuaStreet:
+            type: string
+            length: 200
+            fixed: false
+            nullable: false
+            column: cua_street
+        cuaNeighborhood:
+            type: string
+            length: 200
+            fixed: false
+            nullable: false
+            column: cua_neighborhood
+        cuaNumber:
+            type: boolean
+            nullable: false
+            column: cua_number
+        cuaZipcode:
+            type: boolean
+            nullable: false
+            column: cua_zipcode
+        cuaCity:
+            type: string
+            length: 200
+            fixed: false
+            nullable: false
+            column: cua_city
+        cuaLat:
+            type: string
+            length: 100
+            fixed: false
+            nullable: false
+            column: cua_lat
+        cuaLng:
+            type: string
+            length: 100
+            fixed: false
+            nullable: false
+            column: cua_lng
+        cuaGeohash:
+            type: string
+            length: 150
+            fixed: false
+            nullable: false
+            column: cua_geohash
+    lifecycleCallbacks: {  }

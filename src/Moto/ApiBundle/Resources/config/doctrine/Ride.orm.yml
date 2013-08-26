@@ -1,0 +1,126 @@
+Moto\ApiBundle\Entity\Ride:
+    type: entity
+    table: ride
+    fields:
+        ridId:
+            id: true
+            type: integer
+            unsigned: false
+            nullable: false
+            column: rid_id
+            generator:
+                strategy: IDENTITY
+        ridTime:
+            type: float
+            nullable: true
+            column: rid_time
+        ridStartTime:
+            type: datetime
+            nullable: false
+            column: rid_start_time
+        ridFinishiTime:
+            type: datetime
+            nullable: true
+            column: rid_finishi_time
+        ridLatWithdrawal:
+            type: string
+            length: 100
+            fixed: false
+            nullable: false
+            column: rid_lat_withdrawal
+        ridLngWithdrawal:
+            type: string
+            length: 100
+            fixed: false
+            nullable: false
+            column: rid_lng_withdrawal
+        ridLatDelivery:
+            type: string
+            length: 100
+            fixed: false
+            nullable: false
+            column: rid_lat_delivery
+        ridLngDelivery:
+            type: string
+            length: 100
+            fixed: false
+            nullable: false
+            column: rid_lng_delivery
+        ridComents:
+            type: text
+            nullable: true
+            column: rid_coments
+        ridInformationCharging:
+            type: text
+            nullable: true
+            column: rid_information_charging
+        ridWeight:
+            type: float
+            nullable: false
+            column: rid_weight
+        ridHeight:
+            type: float
+            nullable: false
+            column: rid_height
+        ridWidth:
+            type: float
+            nullable: false
+            column: rid_width
+        ridMaximumWithdrawalTime:
+            type: datetime
+            nullable: false
+            column: rid_maximum_withdrawal_time
+        ridMaximumDeliveryTime:
+            type: datetime
+            nullable: false
+            column: rid_maximum_delivery_time
+        ridPrice:
+            type: float
+            nullable: false
+            column: rid_price
+        rideAverageTime:
+            type: integer
+            unsigned: false
+            nullable: true
+            column: ride_average_time
+        ridDateCreated:
+            type: datetime
+            nullable: false
+            column: rid_date_created
+        ridDateUpdated:
+            type: datetime
+            nullable: false
+            column: rid_date_updated
+        ridIsActive:
+            type: boolean
+            nullable: false
+            column: rid_is_active
+    manyToOne:
+        ris:
+            targetEntity: RideStatus
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                ris_id:
+                    referencedColumnName: ris_id
+            orphanRemoval: false
+        mot:
+            targetEntity: Moto
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                mot_id:
+                    referencedColumnName: mot_id
+            orphanRemoval: false
+        cus:
+            targetEntity: Customer
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                cus_id:
+                    referencedColumnName: cus_id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }
